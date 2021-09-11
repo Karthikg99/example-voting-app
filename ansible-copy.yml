@@ -4,8 +4,5 @@
   gather_facts: true
   tasks:
     - name: Creating a directory [test]
-      become: yes
-      file:
-        path: /home/azureuser/testingdir
-        state: directory
+      command: echo $USER
     
