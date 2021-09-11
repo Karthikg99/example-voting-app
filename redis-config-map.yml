@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: redis-config-map
-data:
-  redisdb_url: redis-db-service
