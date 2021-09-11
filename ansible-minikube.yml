@@ -103,8 +103,9 @@
 
     - name: Run Script
       become: yes
-      script:
-        cmd: /home/azureuser/K8s/port.sh
+      #script:
+        #cmd: /home/azureuser/K8s/port.sh
+      command: sh /home/azureuser/K8s/port.sh
      
 
 
