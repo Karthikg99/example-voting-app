@@ -19,7 +19,7 @@ pipeline{
         }
         stage('Ansible Kubernetes Cluster deployment'){
             steps{
-                sh "ansible-playbook -i hosts ansible-mminikube.yml"
+                sh "ansible-playbook -i hosts ansible-minikube.yml"
             }
         }
     }
