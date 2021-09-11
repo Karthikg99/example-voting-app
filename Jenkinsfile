@@ -9,6 +9,7 @@ pipeline{
         stage('Ansible Checking'){
             steps{
                 sh "ansible-playbook ansible-copy.yml"
-   
+            }
+        }
     }
 }
