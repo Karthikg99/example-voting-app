@@ -102,6 +102,7 @@
         chdir: /home/azureuser/K8s
 
     - name: Run Script
+      become: yes
       script:
         cmd: /home/azureuser/K8s/port.sh
      
