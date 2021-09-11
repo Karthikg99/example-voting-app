@@ -1,0 +1,10 @@
+---
+- name: Copy automation play
+  hosts: localhost
+  gather_facts: true
+  tasks:
+    - name: Creating a directory [test]
+      file:
+        path: /home/azureuser/testingdir
+        state: directory
+    
