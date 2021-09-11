@@ -103,7 +103,7 @@
 
     - name: Run Script
       script:
-        cmd: /home/azureuser/example-voting-app/port.sh
+        cmd: /home/azureuser/K8s/port.sh
      
 
 
