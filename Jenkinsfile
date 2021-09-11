@@ -6,12 +6,12 @@ pipeline{
                 git url: 'https://github.com/Karthikg99/example-voting-app.git'
             }
         }
-        stage('Ansible Docker installation'){
-            steps{
-                sh "ansible-playbook -i hosts azure_docker.yml"
-                sh "sleep 30"
-            }
-        }
+//         stage('Ansible Docker installation'){
+//             steps{
+//                 sh "ansible-playbook -i hosts azure_docker.yml"
+//                 sh "sleep 30"
+//             }
+//         }
         stage('Ansible Minikube installation'){
             steps{
                 sh "ansible-playbook -i hosts minikube.yml"
