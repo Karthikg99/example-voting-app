@@ -1,6 +1,6 @@
 ---
 - name: Minikube automation play
-  hosts: localhost
+  hosts: azure
   gather_facts: true
 
   pre_tasks:
