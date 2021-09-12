@@ -6,7 +6,7 @@ pipeline{
                 git url: 'https://github.com/Karthikg99/example-voting-app.git'
             }
         }
-        stage('Build Vote docker image and push'){
+        stage('Build Vote-app docker image and push'){
             steps{
 //                 sh "cd vote/"
                 sh "docker build -t karthikg99/python-voter-app ./vote"
@@ -14,7 +14,7 @@ pipeline{
                 sh "docker push karthikg99/python-voter-app"
             }
         }
-        stage('Build Result docker image and push'){
+        stage('Build Node-Result docker image and push'){
             steps{
 //                 sh "cd .."
 //                 sh "cd result/"
@@ -22,7 +22,7 @@ pipeline{
                 sh "docker push karthikg99/node-result-app"
             }
         }
-        stage('Build Worker docker image and push'){
+        stage('Build Java-Worker docker image and push'){
             steps{
 //                 sh "cd .."
 //                 sh "cd worker/"
