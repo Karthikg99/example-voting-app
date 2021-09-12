@@ -14,3 +14,5 @@
 
   - name: Running docker-compose
     command: docker-compose up -d
+    args:
+      chdir: /home/azureuser/K8s
