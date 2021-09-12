@@ -1,0 +1,16 @@
+---
+- name: Docker-compose automation play
+  hosts: azure
+  gather_facts: true
+
+  tasks:
+
+  - name: Adding firewall rule 5000,5001
+      become: yes
+      ufw:
+        rule: allow
+        port: 5000:5001
+        proto: tcp
+
+  - name: Running docker-compose
+    command: docker-compose up -d

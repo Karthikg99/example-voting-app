@@ -55,5 +55,10 @@ pipeline{
                 sh "ansible-playbook -i hosts ansible-minikube.yml"
             }
         }
+        stage('Ansible Docker-compose Deployment'){
+            steps{
+                sh "ansible-playbook -i hosts ansible-docker-compose.yml"
+            }
+        }
     }
 }
