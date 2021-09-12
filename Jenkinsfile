@@ -9,7 +9,7 @@ pipeline{
         stage('Build Vote docker image and push'){
             steps{
 //                 sh "cd vote/"
-                sh "docker build -t karthikg99/python-voter-app /vote"
+                sh "docker build -t karthikg99/python-voter-app ./vote"
                 sh "docker login --username=karthikg99 --password=Krookedk@99"
                 sh "docker push karthikg99/python-voter-app"
             }
@@ -18,7 +18,7 @@ pipeline{
             steps{
 //                 sh "cd .."
 //                 sh "cd result/"
-                sh "docker build -t karthikg99/node-result-app /result"
+                sh "docker build -t karthikg99/node-result-app ./result"
                 sh "docker push karthikg99/node-result-app"
             }
         }
@@ -26,7 +26,7 @@ pipeline{
             steps{
 //                 sh "cd .."
 //                 sh "cd worker/"
-                sh "docker build -t karthikg99/java-worker-app /worker"
+                sh "docker build -t karthikg99/java-worker-app ./worker"
                 sh "docker push karthikg99/java-worker-app"
             }
         }
