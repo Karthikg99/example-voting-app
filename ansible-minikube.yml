@@ -94,6 +94,7 @@
       copy:
         content: "#!/bin/bash\nkubectl port-forward --address 0.0.0.0 service/node-result-service 8086:80 2>&1 >/dev/null &\nkubectl port-forward --address 0.0.0.0 service/py-vote-service 8085:80 2>&1 >/dev/null &\necho Inside_port_script"
         dest: /home/azureuser/K8s/port.sh
+        register: depl_output6
     
     - name: Giving permission to port script
       become : yes
@@ -106,6 +107,10 @@
       #script:
         #cmd: /home/azureuser/K8s/port.sh
       command: sh /home/azureuser/K8s/port.sh
+      
+    - name: Deployment rollout status
+      debug:
+        msg: "{{depl_output6.stdout.split('\n')}}"
      
 
 
