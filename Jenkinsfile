@@ -16,7 +16,7 @@ pipeline{
              sh "${scannerHome}/bin/sonar-scanner \
              -D sonar.login=admin \
              -D sonar.password=gk99 \
-             -D sonar.projectKey=Vote-app"
+             -D sonar.projectKey=Vote-setup"
             }
           }
         }
