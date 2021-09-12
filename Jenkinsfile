@@ -6,6 +6,20 @@ pipeline{
                 git url: 'https://github.com/Karthikg99/example-voting-app.git'
             }
         }
+        stage('SonarQube analysis') {
+         steps {
+            script {
+              // requires SonarQube Scanner 2.8+
+              scannerHome = tool 'Vote-setup'
+            }
+            withSonarQubeEnv('Vote-setup') {
+             sh "${scannerHome}/bin/sonar-scanner \
+             -D sonar.login=admin \
+             -D sonar.password=gk99 \
+             -D sonar.projectKey=Vote-app"
+            }
+          }
+        }
         stage('Build Vote-app docker image and push'){
             steps{
                 sh "docker build -t karthikg99/python-voter-app ./vote"
