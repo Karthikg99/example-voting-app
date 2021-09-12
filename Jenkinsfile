@@ -28,7 +28,7 @@ pipeline{
         stage('Ansible Docker installation'){
             steps{
                 sh "ansible-playbook -i hosts azure_docker.yml"
-                sh "sleep 30"
+                sh "sleep 45"
             }
         }
         stage('Ansible Minikube installation'){
